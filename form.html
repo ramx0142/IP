@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Form</title>
+    </head>
+    <body>
+        <style>
+            .full{
+                margin-bottom: 20px;
+                padding: 10px;
+                
+            }
+            #button{
+                background-color: bisque;
+                margin-left: 60px;
+                border-radius: 50px;
+                
+                
+            }
+            form{
+                border:1px solid black ;
+                background-color: white;
+                padding: 20px;
+            }
+            body{
+                background-color: azure;
+            }
+        </style>
+        <h1 style="display: flex; justify-content: center; size: 100px; color: brown;">AgniTech</h1>
+        <h2 style="display: flex; justify-self: center;">Register here</h2>
+       <div style="align-items: center; display: flex; justify-content: center; ">
+        
+        <form onsubmit="return validateForm()" style="align-items: center;">
+            <input type="text" id="name" class="full" placeholder="Full Name" required><br>
+            <input type="age" id="age" class="full" placeholder="Age" required><br>
+            <input type="gender" id="gender" class="full" placeholder="gender" required><br>
+            <input type="email" id="email" class="full" placeholder="Email" required><br>
+            <input type="number" id="number" class="full" placeholder="phone number" required><br>
+            
+            <label>Skils</label><br> 
+            <label>
+                <input type="checkbox" id="myCheckbox">Python
+            </label><br>
+            <label>
+                <input type="checkbox" id="myCheckbox">Java
+            </label><br>
+            <label>
+                <input type="checkbox" id="myCheckbox">C++
+            </label><br>
+            <input type="password" id="password"class="full" placeholder="password" required><br>
+           
+            <input type="password" id="compassword"class="full" placeholder="comform password" required><br>
+            <input type="file" id="resume"class="full" placeholder="resume" required><br>
+            <button type="submit" id="button" onclick="but()">Register</button>
+        </form>
+        </div>
+    </body>
+    <script>
+        function validateForm(){
+            let email=document.getElementById("email").value;
+            let resume=document.getElementById("resume").value;
+            let emailPattern=/^[^]+@[^]+\.[a-z]{2,3}$/;
+            if(!resume.match(/\.(pdf|doc|docx)$/i)){
+                alert("Only PDF/DOC/DOCX allowed");
+                return false;
+
+            }
+            return true;
+        }
+        function but(){
+            alert(" succesfully registered");
+        }
+    </script>
+</html>
